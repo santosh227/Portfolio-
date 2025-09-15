@@ -1,21 +1,26 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Github, ExternalLink, FileText } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const projects = [
   {
     id: 1,
-    year: '2024',
-    title: '5 Common Accessibility Pitfalls and How to Avoid Them',
-    description: 'Comprehensive guide covering the most frequent accessibility issues in web development and practical solutions to create more inclusive digital experiences.',
-    image: 'https://images.pexels.com/photos/6936451/pexels-photo-6936451.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: '#',
-    tags: ['Accessibility', 'Web Standards', 'WCAG']
+    year: "2025",
+    title: "SkyConnect - Enterprise Airline Microservices Platform",
+    description: "Enterprise-grade airline booking platform demonstrating advanced microservices architecture and cloud deployment expertise and production-ready software engineering practices.",
+    image: "src/images/project-1.png",
+    link: "https://github.com/santosh227/-airlinesProject-microservice",
+    links: {
+      github: "https://github.com/santosh227/-airlinesProject-microservice",
+      live: "http://3.110.161.234/health",
+      documentation: "http://bit.ly/3VVkoEJ"
+    },
+    tags: ["NodeJS", "ExpressJS", "Mongoose", "AWS Deployment", "EC2", "nginx", "microservices", "idempotent key"]
   },
   {
     id: 2,
-    year: '2023',
-    title: 'Build a Spotify Connected App',
+    year: '2024',
+    title: 'Ecommerce Platform',
     description: 'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
     image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=400',
     link: '#',
@@ -43,6 +48,12 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const handleLinkClick = (e, url) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <AnimatedSection id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
       <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
@@ -75,7 +86,6 @@ const ProjectsSection = () => {
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                       <span>
                         {project.title}{' '}
                         <ArrowUpRight className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1" />
@@ -83,6 +93,34 @@ const ProjectsSection = () => {
                     </a>
                   </h3>
                   <p className="mt-2 text-sm leading-normal">{project.description}</p>
+                  
+                  {/* Multiple Links Section - Only for projects that have links object */}
+                  {project.links && (
+                    <div className="mt-3 flex flex-wrap gap-2 relative z-20">
+                      <button
+                        onClick={(e) => handleLinkClick(e, project.links.github)}
+                        className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
+                      >
+                        <Github className="h-3 w-3" />
+                        GitHub
+                      </button>
+                      <button
+                        onClick={(e) => handleLinkClick(e, project.links.live)}
+                        className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
+                      >
+                        <ExternalLink className="h-3 w-3" />
+                        Live Demo
+                      </button>
+                      <button
+                        onClick={(e) => handleLinkClick(e, project.links.documentation)}
+                        className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
+                      >
+                        <FileText className="h-3 w-3" />
+                        API Docs
+                      </button>
+                    </div>
+                  )}
+                  
                   {project.stars && (
                     <div className="mt-2 flex items-center">
                       <span className="text-slate-400 text-sm">★ {project.stars}</span>

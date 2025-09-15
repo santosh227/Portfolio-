@@ -12,7 +12,7 @@ const AboutSection = () => {
       </div>
       <div>
         <p className="mb-4">
-          Hi, I’m Santosh Kumar, a dedicated Backend Developer with a strong foundation in building secure, scalable, and efficient server-side applications. I specialize in Node.js, Express.js, and RESTful APIs, with hands-on experience in working with MySQL and MongoDB for robust database management.
+          Hi, I’m Santosh Kumar, a dedicated Backend Developer with a strong foundation in building secure, scalable, and efficient server-side applications. I specialize in Node.js, Express.js, and RESTful APIs with cloud tools like AWS , with hands-on experience in working with MySQL and MongoDB for robust database management.
 
 I enjoy designing system architectures, optimizing application performance, and ensuring smooth communication between front-end interfaces and back-end systems. Over the course of my internships and projects, I’ve worked on building hospital management systems, API integrations, and real-time features using modern backend technologies.
 
