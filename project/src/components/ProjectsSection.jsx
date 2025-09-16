@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Github, ExternalLink, FileText } from 'lucide-react';
+import { ArrowUpRight, Github, ExternalLink, FileText, Container } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const projects = [
@@ -7,43 +7,64 @@ const projects = [
     id: 1,
     year: "2025",
     title: "SkyConnect - Enterprise Airline Microservices Platform",
-    description: "Enterprise-grade airline booking platform demonstrating advanced microservices architecture and cloud deployment expertise and production-ready software engineering practices.",
-    image: "src/images/project-1.png",
+    description: "Enterprise-grade airline booking platform demonstrating advanced microservices architecture, cloud deployment expertise, and production-ready software engineering practices. Features robust JWT authentication, payment gateway integration with Razorpay, comprehensive API documentation, Docker containerization, AWS EC2 deployment with nginx reverse proxy, MongoDB database management, and scalable service-oriented architecture with proper error handling and logging mechanisms.",
+    image: "src/images/project-1.png", // Keep your existing airline project image
     link: "https://github.com/santosh227/-airlinesProject-microservice",
     links: {
       github: "https://github.com/santosh227/-airlinesProject-microservice",
       live: "http://3.110.161.234/health",
-      documentation: "http://bit.ly/3VVkoEJ"
+      documentation: "http://bit.ly/3VVkoEJ",
+      docker: "https://hub.docker.com/r/santoshkumar42/airline-booking-microservices/tags"
     },
-    tags: ["NodeJS", "ExpressJS", "Mongoose", "AWS Deployment", "EC2", "nginx", "microservices", "idempotent key"]
+    tags: ["NodeJS", "ExpressJS", "Mongoose", "AWS Deployment", "EC2", "nginx", "microservices", "Docker Container", "idempotent key"]
   },
   {
     id: 2,
     year: '2024',
-    title: 'Ecommerce Platform',
-    description: 'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
-    image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: '#',
-    tags: ['React', 'Node.js', 'Spotify API', 'Express']
+    title: 'React E-Commerce Frontend Application',
+    description: 'Responsive React e-commerce frontend built with JavaScript, SCSS, and CSS. Features dynamic Product Catalog with category navigation, interactive Shopping Cart with quantity management, modern responsive UI with smooth animations, client-side Search & Filter capabilities, mobile-first design, reusable component architecture, and efficient state management using React hooks and Context API.',
+    image: 'src/images/ecom.png', // Add your first screenshot here
+    link: 'https://github.com/santosh227/ecom/tree/main/ecommerce-%20r',
+    links: {
+      github: 'https://github.com/santosh227/ecom/tree/main/ecommerce-%20r'
+    },
+    tags: ['React', 'JavaScript', 'SCSS', 'CSS', 'Responsive Design', 'Component Architecture', 'State Management']
   },
   {
     id: 3,
     year: '2023',
-    title: 'Spotify Profile Visualizer',
-    description: 'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks.',
-    image: 'https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: '#',
-    stars: 691,
-    tags: ['React', 'Express', 'Spotify API', 'Node.js']
+    title: 'Food Recipe Finder Application',
+    description: 'Interactive recipe finder app built with React.js and CSS featuring component-based architecture, real-time recipe search with React hooks, API integration for extensive recipe databases, detailed recipe views with step-by-step instructions, responsive design for all devices, and modern UI showcasing React state management and reusable component patterns.',
+    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400',
+    link: 'https://github.com/santosh227/food-recipe-app',
+    links: {
+      github: 'https://github.com/santosh227/food-recipe-app'
+    },
+    tags: ['React', 'CSS', 'API Integration', 'React Hooks', 'Component Architecture', 'Responsive Design', 'State Management']
   },
   {
     id: 4,
-    year: '2022',
-    title: 'Halcyon VS Code Theme',
-    description: 'Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Featured on the official VS Code marketplace with thousands of downloads.',
-    image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: '#',
-    tags: ['VS Code', 'Theme', 'Design']
+    year: '2023',
+    title: 'Professional Analytics Dashboard',
+    description: 'Enterprise-grade analytics dashboard built with advanced HTML5, CSS3, and JavaScript featuring sophisticated data visualization, responsive grid systems, interactive UI components, performance metrics display, modern design architecture, cross-browser compatibility, and optimized user experience for business intelligence platforms.',
+    image: 'src/images/dashboard.png', // Add your second screenshot here
+    link: 'https://github.com/santosh227/Dashboard',
+    links: {
+      github: 'https://github.com/santosh227/Dashboard'
+    },
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Dashboard Design', 'Data Visualization', 'Responsive Design', 'UI/UX', 'Grid Systems']
+  },
+  {
+    id: 5,
+    year: '2023',
+    title: 'Google-Style Auto-Complete Search Engine',
+    description: 'Intelligent autocomplete search application built with React.js and Vite, featuring Google-style predictive search suggestions, real-time filtering algorithms, optimized performance with debouncing, keyboard navigation support, dynamic suggestion rendering, and modern responsive UI design for seamless search experiences.',
+    image: 'src/images/searchbar.png', // Add your third screenshot here
+    link: 'https://github.com/santosh227/Auto-complete-search-bar',
+    links: {
+      github: 'https://github.com/santosh227/Auto-complete-search-bar'
+    },
+    tags: ['React', 'Vite', 'JavaScript', 'Search Algorithm', 'Autocomplete', 'Performance Optimization', 'Modern UI', 'Real-time Search']
   }
 ];
 
@@ -104,20 +125,34 @@ const ProjectsSection = () => {
                         <Github className="h-3 w-3" />
                         GitHub
                       </button>
-                      <button
-                        onClick={(e) => handleLinkClick(e, project.links.live)}
-                        className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
-                      >
-                        <ExternalLink className="h-3 w-3" />
-                        Live Demo
-                      </button>
-                      <button
-                        onClick={(e) => handleLinkClick(e, project.links.documentation)}
-                        className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
-                      >
-                        <FileText className="h-3 w-3" />
-                        API Docs
-                      </button>
+                      {project.links.live && (
+                        <button
+                          onClick={(e) => handleLinkClick(e, project.links.live)}
+                          className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
+                        >
+                          <ExternalLink className="h-3 w-3" />
+                          Live Demo
+                        </button>
+                      )}
+                      {project.links.documentation && (
+                        <button
+                          onClick={(e) => handleLinkClick(e, project.links.documentation)}
+                          className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
+                        >
+                          <FileText className="h-3 w-3" />
+                          API Docs
+                        </button>
+                      )}
+                      {/* Docker Hub Link */}
+                      {project.links.docker && (
+                        <button
+                          onClick={(e) => handleLinkClick(e, project.links.docker)}
+                          className="inline-flex items-center gap-1 rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium text-slate-300 hover:bg-slate-700/50 hover:text-teal-300 transition-colors cursor-pointer"
+                        >
+                          <Container className="h-3 w-3" />
+                          Docker Hub
+                        </button>
+                      )}
                     </div>
                   )}
                   

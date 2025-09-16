@@ -3,10 +3,11 @@ import Header from './components/Header';
 import AboutSection from './components/AboutSection';
 import ExperienceSection from './components/ExperienceSection';
 import ProjectsSection from './components/ProjectsSection';
+import Education from './components/Education'
 import useScrollSpy from './hooks/useScrollSpy';
 
 function App() {
-  const activeSection = useScrollSpy(['about', 'experience', 'projects'], 200);
+  const activeSection = useScrollSpy(['about','experience', 'projects','education'], 200);
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-300">
@@ -18,6 +19,7 @@ function App() {
             <AboutSection />
             <ExperienceSection />
             <ProjectsSection />
+            <Education/>
           </main>
         </div>
       </div>

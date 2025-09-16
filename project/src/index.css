@@ -62,22 +62,66 @@ html {
   transform: translateY(0);
 }
 
-/* Experience and Project item animations */
+/* Experience, Education, and Project item animations */
 .experience-item,
+.education-item,
 .project-item {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Fix: Ensure animations trigger when section is visible */
 .section-animate.animate .experience-item,
+.section-animate.animate .education-item,
 .section-animate.animate .project-item {
-  animation-play-state: running;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Navigation line animations */
+/* Enhanced Navigation line animations */
 .nav-indicator {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Navigation Text Positioning and Brightness */
+.nav-text {
+  margin-left: 8px;
+  color: rgb(148 163 184);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Active navigation state - much brighter */
+.nav-text.active,
+.group.active .nav-text {
+  color: rgb(248 250 252) !important;
+  text-shadow: 0 0 8px rgba(94, 234, 212, 0.3);
+}
+
+/* Hover state - brighter */
+.group:hover .nav-text,
+.group:focus-visible .nav-text {
+  color: rgb(226 232 240) !important;
+}
+
+/* Enhanced active indicator - MODERATE LENGTH */
+.group.active .nav-indicator {
+  width: 5rem !important; /* 80px - moderate length */
+  background-color: rgb(248 250 252);
+  box-shadow: 0 0 12px rgba(94, 234, 212, 0.4);
+}
+
+/* Enhanced hover indicator */
+.group:hover .nav-indicator,
+.group:focus-visible .nav-indicator {
+  width: 4rem !important; /* 64px - moderate hover length */
+  background-color: rgb(203 213 225);
+}
+
+/* Default inactive state */
+.nav-indicator {
+  width: 2rem; /* 32px - default shorter line */
 }
 
 /* Hover effects for cards */

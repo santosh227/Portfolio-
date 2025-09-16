@@ -38,7 +38,7 @@ const ExperienceSection = () => {
       <div>
         <a
           className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base mb-8"
-          href="https://drive.google.com/file/d/1CkscU7WEadnYkKs7zlvgKRKkLDEH72KA/view?usp=sharing"
+          href="https://drive.google.com/file/d/1Eh1-c-UjG8ncPkI3XeaQJVZ-nSZns2uv/view?usp=sharing"
           target="_blank"
           rel="noreferrer noopener"
         >
