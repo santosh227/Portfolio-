@@ -2,13 +2,19 @@ import React from 'react';
 import { ArrowUpRight, Github, ExternalLink, FileText, Container } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
+// Import your project images as assets
+import project1Image from '../assets/images/project-1.png';
+import ecomImage from '../assets/images/ecom.png';
+import dashboardImage from '../assets/images/dashboard.png';
+import searchbarImage from '../assets/images/searchbar.png';
+
 const projects = [
   {
     id: 1,
     year: "2025",
     title: "SkyConnect - Enterprise Airline Microservices Platform",
     description: "Enterprise-grade airline booking platform demonstrating advanced microservices architecture, cloud deployment expertise, and production-ready software engineering practices. Features robust JWT authentication, payment gateway integration with Razorpay, comprehensive API documentation, Docker containerization, AWS EC2 deployment with nginx reverse proxy, MongoDB database management, and scalable service-oriented architecture with proper error handling and logging mechanisms.",
-    image: "src/images/project-1.png", // Keep your existing airline project image
+    image: project1Image, // Using imported asset
     link: "https://github.com/santosh227/-airlinesProject-microservice",
     links: {
       github: "https://github.com/santosh227/-airlinesProject-microservice",
@@ -23,7 +29,7 @@ const projects = [
     year: '2024',
     title: 'React E-Commerce Frontend Application',
     description: 'Responsive React e-commerce frontend built with JavaScript, SCSS, and CSS. Features dynamic Product Catalog with category navigation, interactive Shopping Cart with quantity management, modern responsive UI with smooth animations, client-side Search & Filter capabilities, mobile-first design, reusable component architecture, and efficient state management using React hooks and Context API.',
-    image: 'src/images/ecom.png', // Add your first screenshot here
+    image: ecomImage, // Using imported asset
     link: 'https://github.com/santosh227/ecom/tree/main/ecommerce-%20r',
     links: {
       github: 'https://github.com/santosh227/ecom/tree/main/ecommerce-%20r'
@@ -47,7 +53,7 @@ const projects = [
     year: '2023',
     title: 'Professional Analytics Dashboard',
     description: 'Enterprise-grade analytics dashboard built with advanced HTML5, CSS3, and JavaScript featuring sophisticated data visualization, responsive grid systems, interactive UI components, performance metrics display, modern design architecture, cross-browser compatibility, and optimized user experience for business intelligence platforms.',
-    image: 'src/images/dashboard.png', // Add your second screenshot here
+    image: dashboardImage, // Using imported asset
     link: 'https://github.com/santosh227/Dashboard',
     links: {
       github: 'https://github.com/santosh227/Dashboard'
@@ -59,7 +65,7 @@ const projects = [
     year: '2023',
     title: 'Google-Style Auto-Complete Search Engine',
     description: 'Intelligent autocomplete search application built with React.js and Vite, featuring Google-style predictive search suggestions, real-time filtering algorithms, optimized performance with debouncing, keyboard navigation support, dynamic suggestion rendering, and modern responsive UI design for seamless search experiences.',
-    image: 'src/images/searchbar.png', // Add your third screenshot here
+    image: searchbarImage, // Using imported asset
     link: 'https://github.com/santosh227/Auto-complete-search-bar',
     links: {
       github: 'https://github.com/santosh227/Auto-complete-search-bar'
@@ -85,7 +91,7 @@ const ProjectsSection = () => {
       <div>
         <a
           className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base mb-8"
-          href="#"
+          href="https://github.com/santosh227"
           target="_blank"
           rel="noreferrer noopener"
         >
