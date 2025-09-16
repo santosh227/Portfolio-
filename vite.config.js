@@ -10,6 +10,15 @@ export default defineConfig({
   preview: {
     port: process.env.PORT || 4173,
     host: '0.0.0.0',
-    strictPort: false
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      'santoshkumar-portfolio-520a.onrender.com',
+      '.onrender.com'  
+    ]
+  },
+  server: {
+    host: '0.0.0.0',
+    port: process.env.PORT || 5173
   }
 })
